@@ -1,0 +1,8 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /spring-quizer
+
+api:
+  openTDB:
+      url: https://opentdb.com

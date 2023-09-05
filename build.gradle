@@ -23,23 +23,24 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	implementation 'org.springframework.boot:spring-boot-starter-mail'
-	implementation 'org.springframework.boot:spring-boot-starter-security'
-	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
-
-
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
-
-
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testImplementation 'org.springframework.security:spring-security-test'
-	testImplementation 'org.projectlombok:lombok:1.18.22'
+	testImplementation 'org.slf4j:slf4j-api:2.0.5'
+	testImplementation 'com.github.tomakehurst:wiremock-standalone:2.27.2'
+
 }
+
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+sourceSets {
+	test {
+		resources {
+			srcDirs = ["src/test/resources"]
+		}
+	}
 }
