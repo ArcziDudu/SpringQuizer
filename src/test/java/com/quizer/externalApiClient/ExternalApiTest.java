@@ -19,7 +19,7 @@ class ExternalApiTest extends WiremockConfig {
     @Test
     void thatReturnCorrectQuizQuestionObject(){
         wireMockServer.stubFor(get(urlPathEqualTo("/api.php"))
-                .withQueryParam("amount", equalTo("30"))
+                .withQueryParam("amount", equalTo("1"))
                 .willReturn(aResponse()
                         .withStatus(200)
                         .withHeader("Content-Type", "application/json")

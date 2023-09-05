@@ -15,7 +15,7 @@ public class openTdbClientImpl implements OpenTdbDao {
         return webClient.get()
                 .uri(uriBuilder -> uriBuilder
                         .path(QUESTIONS)
-                        .queryParam("amount", 30)
+                        .queryParam("amount", 1)
                         .build())
                 .retrieve()
                 .bodyToMono(QuizQuestion.class)
