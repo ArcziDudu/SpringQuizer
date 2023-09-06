@@ -31,6 +31,7 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.slf4j:slf4j-api:2.0.5'
 	testImplementation 'com.github.tomakehurst:wiremock-standalone:2.27.2'
+	testImplementation 'io.projectreactor:reactor-test'
 }
 
 

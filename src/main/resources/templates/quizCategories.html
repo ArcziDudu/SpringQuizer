@@ -37,6 +37,7 @@
   .btn-category{
     margin-top: 10px;
     padding: 20px;
+    width:100%;
     background-color: rgb(37, 97, 30);
     border: 2px solid white;
     border-radius: 10%;
@@ -58,14 +59,14 @@
         <span>Choose the quiz category!</span>
     </div>
 
-    <div class="container section-categories">
-        <button type="button" class="btn-category ">Random</button>
-            <button type="button" class="btn-category ">Books</button>
-            <button type="button" class="btn-category ">Films</button>
-            <button type="button" class="btn-category ">Music</button>
-            <button type="button" class="btn-category ">Television</button>
-            <button type="button" class="btn-category ">Computers</button>
-    </div>
+        <div class="container section-categories">
+            <div th:each="category : ${categories}">
+                <form th:action="@{'/categories/' + ${category.categoryName}}" method="get">
+                    <button type="submit" class="btn-category" th:text="${category.categoryName}"></button>
+                </form>
+            </div>
+        </div>
+
 
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
