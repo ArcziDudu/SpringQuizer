@@ -13,76 +13,68 @@
 <style>
     body {
         background-color: rgb(174, 193, 174);
-        color: #041201;
+
     }
     .container{
         background-color: rgb(37, 97, 30);
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
-    .section {
+    .header {
+      width: 90%;
         padding: 20px;
         text-align: center;
         font-weight: bold;
-        background-color: #6ce15461;
+        background-color: #66d84f61;
         border-radius: 0 0  20px 20px ;
         color: white;
     }
-    .section-categories{
-      text-align: center;
-        width: 30em;
+    .result{
+      background-color: rgb(34, 189, 26);
+      width: 60%;
+      color: white;
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items:flex-start;
+      border-radius: 10px;
     }
-  .btn-category{
-    margin-top: 10px;
+  
+  .question-container{
+    display:flex ;
+    flex-direction: column;
+    background-color:#155d0761;
+    align-items:flex-start;
+    border-radius: 10px;
     padding: 20px;
-    background-color: rgb(74 75 74);
-    border: 2px solid white;
-    border-radius: 10%;
-    color: white;
-    font-weight: bold;
-    transition: background-color .2s;
-
+    width: 90%;
+    min-height: 200px;
+   margin-top: 10px;
+   margin-bottom: 20px;
   }
 
-  .boolean{
-  margin-top:10px;
-  display:flex;
-  justify-content:space-around;
-
-  }
-  .btn-boolean{
-  background-color:rgb(45, 197, 45);
-  border:1px solid white;
-  border-radius:10px;
-  color:white;
-  font-weight: bold;
-  padding: 10px;
-  min-width: 90px;
-  }
-  .btn-boolean:hover{
-    background-color:rgb(67, 176, 67);
-  }
-  .mediumhard{
-  width:100%;
-  }
 </style>
 <body>
 <div class="container">
     <nav></nav>
 
-    <div class="section">
-        <h4 >Hello! This is Quizer by ArtDev!</h4>
-        <span>Choose the quiz difficulty!</span>
+    <div class="header">
+        <h4>Result</h4>
+    
     </div>
-    <h2>Zdobyte punkty:</h2>
-    <h2 th:text="${result}"></h2>
-    <h2>Twoje odpowiedzi:</h2>
+    <section class="container result">
+   <h2 th:text="'Points scored: '+${result}" style="margin: 0 auto;">asd</h2>
 
-    <div th:each="answer : ${userAnswers}" class="question-container">
-        <p>Pytanie: <span th:utext="${answer.questionq}"></span></p>
-        <p>Twoja odpowiedź: <span th:utext="${answer.yourAnswer}"></span></p>
-        <p>Poprawna odpowiedź: <span th:utext="${answer.correctAnswer}"></span></p>
+
+    <div th:each="answer : ${userAnswers}" class="container question-container">
+        <p>Question: <span th:utext="${answer.questionq}"></span></p>
+        <p>Your answer: <span th:utext="${answer.yourAnswer}"></span></p>
+        <p>Correct answer: <span th:utext="${answer.correctAnswer}"></span></p>
     </div>
+    </section>
+ 
 
 
 </div>
