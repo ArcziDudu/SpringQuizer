@@ -1,0 +1,184 @@
+{
+  "results": [
+    {
+      "category": "Entertainment: Film",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "Which was the first of Alfred Hitchcock&#039;s movies to be filmed in colour?",
+      "correct_answer": "Rope",
+      "incorrect_answers": [
+        "Psycho",
+        "Vertigo",
+        "Rebecca"
+      ]
+    },
+    {
+      "category": "Entertainment: Film",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "In the 1976 film &#039;Taxi Driver&#039;, how many guns did Travis buy from the salesman?",
+      "correct_answer": "4",
+      "incorrect_answers": [
+        "2",
+        "6",
+        "1"
+      ]
+    },
+    {
+      "category": "Entertainment: Film",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "What did Alfred Hitchcock use as blood in the film &quot;Psycho&quot;? ",
+      "correct_answer": "Chocolate syrup",
+      "incorrect_answers": [
+        "Ketchup",
+        "Red food coloring",
+        "Maple syrup"
+      ]
+    },
+    {
+      "category": "Entertainment: Film",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "What did the first moving picture depict?",
+      "correct_answer": "A galloping horse",
+      "incorrect_answers": [
+        "A woman in a dress",
+        "A man walking",
+        "A crackling fire"
+      ]
+    },
+    {
+      "category": "Entertainment: Film",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "In 2012, which movie won every category in the 32nd &quot;Golden Raspberry Awards&quot;?",
+      "correct_answer": "Jack and Jill",
+      "incorrect_answers": [
+        "The Girl with the Dragon Tattoo",
+        "Thor",
+        "The King&#039;s Speech"
+      ]
+    },
+    {
+      "category": "Entertainment: Film",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "In the 1964 film &quot;Zulu&quot;, what song does the British Army company sing before the final battle?",
+      "correct_answer": "Men of Harlech",
+      "incorrect_answers": [
+        "Scotland the Brave",
+        "Colonel Bogey March",
+        "The British Grenadiers"
+      ]
+    },
+    {
+      "category": "Entertainment: Film",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "What was the first movie to ever use a Wilhelm Scream?",
+      "correct_answer": "Distant Drums",
+      "incorrect_answers": [
+        "Treasure of the Sierra Madre",
+        "The Charge at Feather River",
+        "Indiana Jones"
+      ]
+    },
+    {
+      "category": "Entertainment: Film",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "In &quot;Star Trek Nemesis&quot;, why was Praetor Shinzon created?",
+      "correct_answer": "To replace Picard as a Romulan Agent",
+      "incorrect_answers": [
+        "To destroy the Enterprise",
+        "To become Picard&#039;s friend ",
+        "To steal the Enterprise"
+      ]
+    },
+    {
+      "category": "Entertainment: Film",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "In what year did Clint Eastwood star as Inspector Harry Callahan in the film &quot;Dirty Harry&quot;?",
+      "correct_answer": "1971",
+      "incorrect_answers": [
+        "1975",
+        "1983",
+        "1969"
+      ]
+    },
+    {
+      "category": "Entertainment: Film",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "Before &quot;Jurassic Park III&quot; was finalized and the Spinosaurus was chosen, which dinosaur was going to be the star?",
+      "correct_answer": "Baryonyx",
+      "incorrect_answers": [
+        "Tyrannosaurus Rex",
+        "Velociraptor",
+        "Suchomimus"
+      ]
+    },
+    {
+      "category": "Entertainment: Film",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "What is the species of the &quot;Predator&quot; in the 1987 movie &quot;Predator&quot;?",
+      "correct_answer": "Yautja",
+      "incorrect_answers": [
+        "Xenomorph",
+        "Praetorian",
+        "Phocrex"
+      ]
+    },
+    {
+      "category": "Entertainment: Film",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "Which 1994 film did Roger Ebert famously despise, saying &quot;I hated hated hated hated hated this movie&quot;.",
+      "correct_answer": "North",
+      "incorrect_answers": [
+        "3 Ninjas Kick Back",
+        "The Santa Clause",
+        "Richie Rich"
+      ]
+    },
+    {
+      "category": "Entertainment: Film",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "In the film &quot;Harry Potter and the Order of The Phoenix&quot;, why was Harry Potter&#039;s scream, after Sirius Black died, muted?",
+      "correct_answer": "Too Agonizing",
+      "incorrect_answers": [
+        "Too Loud",
+        "Too Harsh",
+        "Too Violent"
+      ]
+    },
+    {
+      "category": "Entertainment: Film",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "The film Mad Max: Fury Road features the Dies Irae  from which composer&#039;s requiem?",
+      "correct_answer": "Verdi",
+      "incorrect_answers": [
+        "Mozart",
+        "Berlioz",
+        "Brahms"
+      ]
+    },
+    {
+      "category": "Entertainment: Film",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "In the 1974 Christmas flick &quot;The Year Without a Santa Claus,&quot; what are the names of the two elves who help Mrs. Claus save Christmas?",
+      "correct_answer": "Jingle &amp; Jangle",
+      "incorrect_answers": [
+        "Buddy &amp; Bobby",
+        "Holly &amp; Jolly",
+        "Snowflake &amp; Icicle"
+      ]
+    }
+  ]
+}

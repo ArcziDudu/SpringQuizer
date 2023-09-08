@@ -1,0 +1,124 @@
+{
+  "results": [
+    {
+      "category": "Entertainment: Music",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "Which band had hits in 1972 with the songs &quot;Baby I&#039;m A Want You&quot;, &quot;Everything I Own&quot; and &quot;The Guitar Man&quot;",
+      "correct_answer": "Bread",
+      "incorrect_answers": [
+        "America",
+        "Chicago",
+        "Smokie"
+      ]
+    },
+    {
+      "category": "Entertainment: Music",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "EDM producer Marshmello performs live wearing clothes and a marshmallow mask of what colour?",
+      "correct_answer": "White",
+      "incorrect_answers": [
+        "Black",
+        "Blue",
+        "Yellow"
+      ]
+    },
+    {
+      "category": "Entertainment: Music",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "Which artist collaborated with American DJ Dillon Francis to release the song 2016 &quot;Need You&quot;?",
+      "correct_answer": "NGHTMRE",
+      "incorrect_answers": [
+        "LOUDPVCK",
+        "KRNE",
+        "DVBBS"
+      ]
+    },
+    {
+      "category": "Entertainment: Music",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "Which of these songs by artist Eminem contain the lyric &quot;Nice to meet you. Hi, my name is... I forgot my name!&quot;?",
+      "correct_answer": "Rain Man",
+      "incorrect_answers": [
+        "Without Me",
+        "Kim",
+        "Square Dance"
+      ]
+    },
+    {
+      "category": "Entertainment: Music",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "Which famous 90&#039;s rap album is commonly referred to as &quot;The Bible of Hip Hop&quot;?",
+      "correct_answer": "Illmatic",
+      "incorrect_answers": [
+        "The Low End Theory",
+        "The Chronic",
+        "Enter The Wu-Tang (36 Chambers)"
+      ]
+    },
+    {
+      "category": "Entertainment: Music",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "Moby, an American DJ, singer, and musician, achieved worldwide success for the 1999 release of which of the following albums?",
+      "correct_answer": "Play",
+      "incorrect_answers": [
+        "Everything Is Wrong",
+        "Moby",
+        "18"
+      ]
+    },
+    {
+      "category": "Entertainment: Music",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "The &#039;In the Flesh&#039; tour was used in support of what Pink Floyd album?",
+      "correct_answer": "Animals",
+      "incorrect_answers": [
+        "The Wall",
+        "Wish You Were Here",
+        "The Final Cut"
+      ]
+    },
+    {
+      "category": "Entertainment: Music",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "Liam Howlett founded which electronic music group in 1990?",
+      "correct_answer": "The Prodigy",
+      "incorrect_answers": [
+        "The Chemical Brothers",
+        "The Crystal Method",
+        "Infected Mushroom"
+      ]
+    },
+    {
+      "category": "Entertainment: Music",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "On the cover of &#039;Abbey Road,&#039; which of the Beatles is not wearing shoes?",
+      "correct_answer": "Paul McCartney",
+      "incorrect_answers": [
+        "Ringo Starr",
+        "John Lennon",
+        "George Harrison"
+      ]
+    },
+    {
+      "category": "Entertainment: Music",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "Which one of these people has been in the band &#039;&#039;Metallica&#039;&#039; in the past?",
+      "correct_answer": "Dave Mustaine",
+      "incorrect_answers": [
+        "Kurt Cobain",
+        "Joey Belladonna",
+        "Dave Lombardo"
+      ]
+    }
+  ]
+}
