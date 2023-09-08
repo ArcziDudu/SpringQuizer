@@ -12,12 +12,10 @@
 </head>
 <style>
     body {
-        height: 100vh;
-        background-color: rgb(174, 193, 174); 
+        background-color: rgb(174, 193, 174);
         color: #041201;
     }
     .container{
-        height: 100vh;
         background-color: rgb(37, 97, 30);
         display: flex;
         flex-direction: column;
@@ -37,35 +35,54 @@
   .btn-category{
     margin-top: 10px;
     padding: 20px;
-    width:100%;
     background-color: rgb(74 75 74);
     border: 2px solid white;
     border-radius: 10%;
     color: white;
     font-weight: bold;
     transition: background-color .2s;
-  }
-  .btn-category:hover{
-    background-color: rgb(27, 146, 27);
+
   }
 
+  .boolean{
+  margin-top:10px;
+  display:flex;
+  justify-content:space-around;
+
+  }
+  .btn-boolean{
+  background-color:rgb(45, 197, 45);
+  border:1px solid white;
+  border-radius:10px;
+  color:white;
+  font-weight: bold;
+  padding: 10px;
+  min-width: 90px;
+  }
+  .btn-boolean:hover{
+    background-color:rgb(67, 176, 67);
+  }
+  .mediumhard{
+  width:100%;
+  }
 </style>
 <body>
 <div class="container">
     <nav></nav>
-    
+
     <div class="section">
         <h4 >Hello! This is Quizer by ArtDev!</h4>
-        <span>Choose the quiz category!</span>
+        <span>Choose the quiz difficulty!</span>
     </div>
+    <h2>Zdobyte punkty:</h2>
+    <h2 th:text="${result}"></h2>
+    <h2>Twoje odpowiedzi:</h2>
 
-        <div class="container section-categories">
-            <div th:each="category : ${categories}">
-                <form th:action="@{'/categories/' + ${category.categoryName}}" method="get">
-                    <button type="submit" class="btn-category" th:text="${category.categoryName}"></button>
-                </form>
-            </div>
-        </div>
+    <div th:each="answer : ${userAnswers}" class="question-container">
+        <p>Pytanie: <span th:utext="${answer.questionq}"></span></p>
+        <p>Twoja odpowiedź: <span th:utext="${answer.yourAnswer}"></span></p>
+        <p>Poprawna odpowiedź: <span th:utext="${answer.correctAnswer}"></span></p>
+    </div>
 
 
 </div>
