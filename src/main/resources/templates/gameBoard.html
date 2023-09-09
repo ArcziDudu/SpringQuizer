@@ -12,7 +12,7 @@
 </head>
 <style>
     body {
-        background-color: rgb(174, 193, 174); 
+        background-color: rgb(37, 97, 30);
         color: #041201;
     }
     .container{
@@ -89,7 +89,7 @@
    background-color:rgb(67, 176, 67);
 }
 .custom-radio input[type="radio"]:checked + .custom-radio-btn {
-    background-color:  #134d13;;
+    background-color:  #42e142;
 }
 .button-group{
 display:flex;
@@ -151,8 +151,13 @@ margin-top:15px;
                        th:value="${question.question}"/>
                 <input type="hidden" th:field="*{answers[__${questionIndex.index}__].correctAnswer}"
                        th:value="${question.correct_answer}"/>
+
             </div>
         </div>
+        <input type="hidden" th:field="*{selectedDifficulty}"
+               th:value="${selectedDifficulty}"/>
+        <input type="hidden" th:field="*{selectedCategory}"
+               th:value="${selectedCategory}"/>
         <button type="submit" class="container send btn btn-success"><p class="container">Send</p></button>
     </form>
 
