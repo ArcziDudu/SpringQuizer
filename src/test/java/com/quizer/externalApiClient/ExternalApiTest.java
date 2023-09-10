@@ -27,7 +27,7 @@ class ExternalApiTest extends WiremockConfig {
                         .withHeader("Content-Type", "application/json")
                         .withBodyFile("wiremock/externalApiResult.json")));
 
-        Flux<ExternalApiResults> externalApiResults = questionsService.fetchQuestions("books", "easy");
+        Flux<ExternalApiResults> externalApiResults = questionsService.fetchQuestions(10, "easy");
 
         StepVerifier.create(externalApiResults)
                 .consumeNextWith(result -> {
@@ -87,7 +87,7 @@ class ExternalApiTest extends WiremockConfig {
                         .withStatus(200)
                         .withHeader("Content-Type", "application/json")
                         .withBodyFile("wiremock/externalApiResultMedium.json")));
-        Flux<ExternalApiResults> externalApiResults = questionsService.fetchQuestions("music", "medium");
+        Flux<ExternalApiResults> externalApiResults = questionsService.fetchQuestions(11, "medium");
         StepVerifier.create(externalApiResults)
                 .consumeNextWith(result -> {
                     Assertions.assertEquals(10, result.results().size());

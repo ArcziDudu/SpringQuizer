@@ -23,6 +23,8 @@
         align-items: center;
     }
     .header {
+        display: flex;
+        justify-content: space-around;
       width: 90%;
         padding: 20px;
         text-align: center;
@@ -61,11 +63,22 @@
     <nav></nav>
 
     <div class="header">
-        <h4>Result</h4>
-    
+
+        <form method="get" th:action="@{/my-account}">
+            
+            <button type="submit" class="container send btn btn-success">
+             <span>My account</span>
+            </button>
+        </form>
+        <form method="get" th:action="@{/categories}">
+            <button type="submit" class="container send btn btn-success">
+             <span>One more game</span>
+            </button>
+        </form>
     </div>
+    <h4 style="color: white; margin: 10px auto;">Result</h4>
     <section class="container result">
-   <h2 th:text="'Points scored: '+${result}" style="margin: 0 auto;">asd</h2>
+   <h2 th:text="'Points scored: '+${result}" style="margin: 0 auto;"></h2>
 
 
     <div th:each="answer : ${userAnswers}" class="container question-container">

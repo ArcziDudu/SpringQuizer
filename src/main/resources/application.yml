@@ -6,3 +6,25 @@ server:
 api:
   openTDB:
       url: https://opentdb.com
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/quizer_database
+    username: postgres
+    password: 1234
+    hikari:
+      idle-timeout: 10000
+      connectionTimeout: 20000
+      minimumIdle: 10
+      maximumPoolSize: 20
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true

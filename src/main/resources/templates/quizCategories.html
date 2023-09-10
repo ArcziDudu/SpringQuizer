@@ -13,7 +13,7 @@
 <style>
     body {
         height: 100vh;
-        background-color: rgb(174, 193, 174); 
+        background-color: rgb(37, 97, 30);
         color: #041201;
     }
     .container{
@@ -21,8 +21,11 @@
         background-color: rgb(37, 97, 30);
         display: flex;
         flex-direction: column;
+        
     }
     .section {
+    display:flex;
+    justify-content:space-between;
         padding: 20px;
         text-align: center;
         font-weight: bold;
@@ -52,13 +55,22 @@
 </style>
 <body>
 <div class="container">
-    <nav></nav>
+
     
     <div class="section">
-        <h4 >Hello! This is Quizer by ArtDev!</h4>
-        <span>Choose the quiz category!</span>
-    </div>
+        <form method="get" th:action="@{/scoreboard}">
+            <button type="submit" class=" btn btn-success" style="border: none;">
+                <span>All players scoreboard</span>
+            </button>
+        </form>
 
+        <form method="get" th:action="@{/my-account}">
+            <button type="submit" class=" btn btn-success" style="border: none;">
+                <span>My account</span>
+            </button>
+        </form>
+    </div>
+    <h2 style="margin: 20px auto; color:white">Choose category</h2>
         <div class="container section-categories">
             <div th:each="category : ${categories}">
                 <form th:action="@{'/categories/' + ${category.categoryName}}" method="get">

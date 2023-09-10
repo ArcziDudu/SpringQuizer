@@ -31,7 +31,7 @@ class QuestionsServiceTest {
                 .willReturn(Flux.just(question1()));
 
         //when
-        Flux<ExternalApiResults> externalApiResults = questionsService.fetchQuestions("books", "easy");
+        Flux<ExternalApiResults> externalApiResults = questionsService.fetchQuestions(10, "easy");
         //then
         StepVerifier.create(externalApiResults)
                 .consumeNextWith(result -> {
