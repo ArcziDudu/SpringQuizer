@@ -7,5 +7,9 @@ import java.util.Optional;
 
 public interface PlayerDao {
     void savePlayer(PlayerEntity player);
-    Optional<PlayerDto> findPlayer(String userName);
+
+
+    Optional<PlayerEntity> findByUserName(String adminek);
+
+    Optional<PlayerDto> findDtoByUserName(String userName);
 }

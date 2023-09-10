@@ -14,11 +14,16 @@ import java.util.Set;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class GameDto {
+public class GameDto implements Comparable<GameDto>{
     private Integer gameId;
     private OffsetDateTime dateOfGame;
     private String quizDifficulty;
     private String quizCategory;
     private Integer points;
     private PlayerEntity player;
+
+    @Override
+    public int compareTo(GameDto other) {
+        return other.getDateOfGame().compareTo(this.getDateOfGame());
+    }
 }

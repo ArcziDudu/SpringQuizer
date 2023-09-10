@@ -14,18 +14,21 @@ import java.util.Optional;
 @AllArgsConstructor
 public class PlayerJpaImpl implements PlayerDao {
     private PlayerJpaRepository playerJpaRepository;
-    private PlayerMapper playerMapper;
+    private final PlayerMapper playerMapper;
     @Override
     public void savePlayer(PlayerEntity player) {
         playerJpaRepository.save(player);
     }
 
     @Override
-    public Optional<PlayerDto> findPlayer(String username) {
-        return playerJpaRepository.findByUserName(username).map(playerMapper::mapFromEntity);
+    public Optional<PlayerEntity> findByUserName(String userName) {
+        return playerJpaRepository.findByUserName(userName);
     }
 
-    public PlayerEntity get(int id){
-        return playerJpaRepository.findById(id).get();
+    @Override
+    public Optional<PlayerDto> findDtoByUserName(String userName) {
+        return playerJpaRepository.findByUserName(userName).map(playerMapper::mapFromEntity);
     }
+
+
 }

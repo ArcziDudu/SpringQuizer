@@ -13,13 +13,11 @@
 <style>
     body {
         background-color: rgb(174, 193, 174);
-        height: 100vh;
 
     }
     .wrapper{
-        height: 100vh;
         background-color:rgb(37, 97, 30);
-
+    height: 100vh;
     }
     .container{
         background-color: rgb(37, 97, 30);
@@ -29,7 +27,6 @@
         align-items: center;
         border-right:2px solid white;
         border-left:2px solid white;
-        border-bottom: 2px solid white;
     }
     .header {
         display: flex;
@@ -74,29 +71,39 @@
     <nav></nav>
 
     <div class="header">
-
-        <form method="get" th:action="@{/my-account/{userName}(userName=${'arczi'})}">
-            
+        <form method="get" th:action="@{/scoreboard}">
             <button type="submit" class="container send btn btn-success" style="border: none;">
-             <span>All-player scoreboard</span>
+                <span>All players scoreboard</span>
             </button>
         </form>
         <form method="get" th:action="@{/categories}">
             <button type="submit" class="container send btn btn-success" style="border: none;">
-             <span>One more game</span>
+                <span>Play game</span>
+            </button>
+        </form>
+        <form method="get" th:action="@{/logout}">
+            <button type="submit" class="container send btn btn-success" style="border: none;">
+             <span>Log out</span>
             </button>
         </form>
     </div>
     <h4 style="color: white; margin: 10px auto;">Your games</h4>
     <section class="container result">
-   <h2 th:text="'Points scored: '+${result}" style="margin: 0 auto;"></h2>
+   <h2 th:text="'Totally points scored: '+${result}" style="margin: 0 auto;"></h2>
 
 
-    <div th:each="game : ${games}" class="container question-container" style="border: none;">
-        <p>Game number: <span th:utext="${game.gameId}"></span></p>
-        <p>Date of game: <span th:utext="${game.dateOfGame}"></span></p>
+    <div th:each="game, gameIndex : ${games}" class="container question-container" style="border: none;">
+        <p>Game number: <span th:utext="${gameIndex.index + 1}"></span></p>
+        <th:block th:with="offsetDateTime=${game.dateOfGame}">
+            <th:block
+                th:with="zonedDateTime=${offsetDateTime.atZoneSameInstant(T(java.time.ZoneId).of('Europe/Warsaw'))}">
+                <p th:text="${zonedDateTime.format(T(java.time.format.DateTimeFormatter).ofPattern('yyyy-MM-dd HH:mm'))}"></p>
+            </th:block>
+        </th:block>
         <p>Category: <span th:utext="${game.quizCategory}"></span></p>
+        <p>Difficulty: <span th:utext="${game.quizDifficulty}"></span></p>
         <p>Amount of points: <span th:utext="${game.points}"></span></p>
+
     </div>
     </section>
  

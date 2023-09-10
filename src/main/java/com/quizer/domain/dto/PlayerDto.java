@@ -15,5 +15,5 @@ public class PlayerDto {
     private Integer playerId;
     private String userName;
     private String userEmail;
-    private Set<GameEntity> games;
+    private Set<GameDto> games;
 }

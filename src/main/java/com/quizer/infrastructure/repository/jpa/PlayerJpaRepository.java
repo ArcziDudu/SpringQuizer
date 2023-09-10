@@ -6,8 +6,10 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
+
 @Repository
 public interface PlayerJpaRepository extends JpaRepository<PlayerEntity, Integer> {
 
-    Optional<PlayerEntity> findByUserName(String userName);
+
+    Optional<PlayerEntity> findByUserName(String username);
 }

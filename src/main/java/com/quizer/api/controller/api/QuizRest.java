@@ -19,11 +19,5 @@ public class QuizRest {
     public static final String API_das = "/{category}/{level}";
     private final QuestionsService questionsService;
 
-    @GetMapping(value = API_das)
-    public ResponseEntity<Flux<ExternalApiResults>> getRepositories(
-            @PathVariable String category,
-            @PathVariable String level) {
-        return ResponseEntity
-                .ok(questionsService.fetchQuestions(category, level));
-    }
+
 }

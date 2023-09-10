@@ -18,9 +18,9 @@ public class QuestionsService {
 
     private final QuestionDao questionDao;
 
-    public Flux<ExternalApiResults> fetchQuestions(String category, String difficulty) {
+    public Flux<ExternalApiResults> fetchQuestions(int category, String difficulty) {
         return questionDao.getResultsFromExternalApi(chosenAmount(difficulty),
-                chosenCategory(category),
+                category,
                 chosenType(difficulty),
                 difficulty);
     }
@@ -53,7 +53,7 @@ public class QuestionsService {
         return amount;
     }
 
-    private int chosenCategory(String category) {
+    public int chosenCategory(String category) {
         int categoryType = 0;
         int[] possibleValues = {10, 11, 12, 14, 18};
         Random random = new Random();
@@ -64,6 +64,18 @@ public class QuestionsService {
             case "television" -> categoryType = 14;
             case "computers" -> categoryType = 18;
             case "random" -> categoryType = possibleValues[random.nextInt(possibleValues.length)];
+        }
+        return categoryType;
+    }
+
+    public String CategoryFromIntToString(int category){
+        String categoryType = "random";
+        switch (category) {
+            case 10 -> categoryType = "books";
+            case 11 -> categoryType = "films";
+            case 12-> categoryType = "music";
+            case 14 -> categoryType = "television";
+            case 18 -> categoryType = "computers";
         }
         return categoryType;
     }
