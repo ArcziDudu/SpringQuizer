@@ -1,6 +1,8 @@
 package com.quizer.business.services;
 
 import com.quizer.business.services.dao.QuestionDao;
+import com.quizer.domain.exception.InvalidCategoriesException;
+import com.quizer.domain.exception.InvalidDifficultyException;
 import com.quizer.infrastructure.model.ExternalApiResults;
 import com.quizer.infrastructure.model.QuestionAnswer;
 import lombok.AllArgsConstructor;
@@ -10,6 +12,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Random;
 
 @Service
@@ -24,21 +27,26 @@ public class QuestionsService {
                 chosenType(difficulty),
                 difficulty);
     }
-    public int amountOfPoints(List<QuestionAnswer> userAnswers){
+
+    public int amountOfPoints(List<QuestionAnswer> userAnswers) {
         int amountOfPoints = 0;
         for (QuestionAnswer userAnswer : userAnswers) {
-            if(userAnswer.getYourAnswer().equalsIgnoreCase((userAnswer.getCorrectAnswer()))){
+            if (userAnswer.getYourAnswer().equalsIgnoreCase((userAnswer.getCorrectAnswer()))) {
                 amountOfPoints++;
             }
         }
         return amountOfPoints;
     }
-    private String chosenType(String difficulty) {
 
+    private String chosenType(String difficulty) {
         String type;
         switch (difficulty) {
             case "medium", "hard" -> type = "multiple";
-            default -> type = "boolean";
+            case "easy" -> type = "boolean";
+            default -> {
+                throw new InvalidDifficultyException("Invalid difficulty: " + difficulty
+                        +". You can choose from three options: easy, medium or hard");
+            }
         }
         return type;
     }
@@ -64,16 +72,20 @@ public class QuestionsService {
             case "television" -> categoryType = 14;
             case "computers" -> categoryType = 18;
             case "random" -> categoryType = possibleValues[random.nextInt(possibleValues.length)];
+            default -> {
+                throw new InvalidCategoriesException("Invalid category: " + category
+                        +". You can choose from five options: random, books, films, music, television, computers");
+            }
         }
         return categoryType;
     }
 
-    public String CategoryFromIntToString(int category){
+    public String CategoryFromIntToString(int category) {
         String categoryType = "random";
         switch (category) {
             case 10 -> categoryType = "books";
             case 11 -> categoryType = "films";
-            case 12-> categoryType = "music";
+            case 12 -> categoryType = "music";
             case 14 -> categoryType = "television";
             case 18 -> categoryType = "computers";
         }
