@@ -128,12 +128,23 @@ public class GameController {
 
     @GetMapping(SCOREBOARD)
     public String showScoreboard(Model model) {
-        List<GameDto> allGames = gameService.fetchAllGames();
-        Map<String, Integer> playerPointsMap = gameService.getPlayerStatsSorted(allGames);
-        model.addAttribute("playerPointsMap", playerPointsMap);
+
+        List<PlayerDto> allPlayers = playerService.findAllPlayers();
+
+        for (PlayerDto player : allPlayers) {
+            int totalPoints = 0;
+            for (GameDto game : player.getGames()) {
+                totalPoints += game.getPoints();
+            }
+            player.setTotalPoints(totalPoints);
+        }
+
+
+        List<PlayerDto> mutablePlayers = new ArrayList<>(allPlayers);
+        mutablePlayers.sort((p1, p2) -> p2.getTotalPoints() - p1.getTotalPoints());
+        model.addAttribute("allPlayers", mutablePlayers);
         return "scoreboard";
     }
-
 
     private Comparator<? super GameDto> getGameDtoComparator() {
         return Comparator.comparing(GameDto::getDateOfGame);

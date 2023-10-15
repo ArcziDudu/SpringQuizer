@@ -10,6 +10,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import javax.swing.text.html.Option;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -37,5 +38,9 @@ public class PlayerService {
         if(dtoByUserName.isEmpty()){
             throw new UsernameNotFoundException("user: "+userName+" not found!");
         }return dtoByUserName.get();
+    }
+
+    public List<PlayerDto> findAllPlayers() {
+        return playerDao.findAllPlayers();
     }
 }

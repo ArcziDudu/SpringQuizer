@@ -19,6 +19,7 @@ public class RegisterService {
     @Transactional
     public void save(UserEntity newUser) {
         newUser.getRoles().add(roleRepository.findByRole("PLAYER"));
+        newUser.setActive(true);
         userRepository.save(newUser);
     }
 
