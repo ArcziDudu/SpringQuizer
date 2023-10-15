@@ -6,6 +6,7 @@ import com.quizer.infrastructure.entity.PlayerEntity;
 import com.quizer.infrastructure.repository.mapper.PlayerMapper;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import javax.swing.text.html.Option;
@@ -34,7 +35,7 @@ public class PlayerService {
     public PlayerDto findDtoByUserName(String userName) {
         Optional<PlayerDto> dtoByUserName = playerDao.findDtoByUserName(userName);
         if(dtoByUserName.isEmpty()){
-            throw  new RuntimeException();
+            throw new UsernameNotFoundException("user: "+userName+" not found!");
         }return dtoByUserName.get();
     }
 }

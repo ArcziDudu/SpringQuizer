@@ -162,4 +162,25 @@ public class QuizRestTest extends RestAssuredIntegrationTestBase {
         }
         Assertions.assertEquals(15, quizQuestions.size());
     }
+
+    @Test
+    public void thatReturnScoreboard(){
+        given()
+                .spec(requestSpecification())
+                .when()
+                .get("http://localhost:" + port + basePath + API + "/scoreboard")
+                .then()
+                .statusCode(200)
+                .contentType(ContentType.JSON);
+    }
+    @Test
+    public void thatReturnNotFountWhenPlayerInfoByWrongUsername(){
+        given()
+                .spec(requestSpecification())
+                .when()
+                .get("http://localhost:" + port + basePath + API + "/game-info/test")
+                .then()
+                .statusCode(404)
+                .contentType(ContentType.JSON);
+    }
 }
