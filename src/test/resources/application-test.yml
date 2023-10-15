@@ -1,3 +1,7 @@
-api:
-  openTDB:
-    url: http://localhost:9999/
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+  security:
+    enabled: false
+

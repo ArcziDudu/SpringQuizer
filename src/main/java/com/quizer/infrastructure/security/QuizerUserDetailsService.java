@@ -20,6 +20,8 @@ public class QuizerUserDetailsService implements UserDetailsService {
 
     private final UserRepository userRepository;
 
+
+
     @Override
     @Transactional
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {

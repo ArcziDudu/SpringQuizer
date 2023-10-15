@@ -1,16 +1,21 @@
 package com.quizer.api.controller;
 
 import com.quizer.api.controller.view.GameController;
+import com.quizer.business.services.GameService;
+import com.quizer.business.services.PlayerService;
 import com.quizer.business.services.QuestionsService;
 import com.quizer.infrastructure.constants.QuizCategories;
 import com.quizer.infrastructure.constants.QuizDifficulty;
 
+import com.quizer.infrastructure.security.UserRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.hamcrest.Matchers.containsString;
@@ -18,11 +23,18 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @WebMvcTest(controllers = GameController.class)
+@AutoConfigureMockMvc(addFilters = false)
 class GameControllerWebMvcTest {
     @Autowired
     private MockMvc mockMvc;
     @MockBean
     private QuestionsService questionsService;
+    @MockBean
+    private GameService gameService;
+    @MockBean
+    private PlayerService playerService;
+    @MockBean
+    private UserRepository userRepository;
 
     @Test
     void thatReturnCorrectCategoriesTemplate() throws Exception {

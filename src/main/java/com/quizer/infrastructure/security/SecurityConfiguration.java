@@ -43,7 +43,7 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests((authorize) ->
                         authorize
                                 .requestMatchers("/login", "/register/**").permitAll()
-                                .requestMatchers("/categories/**", "/game-result", "/my-account/**", "/scoreboard").hasAnyAuthority("PLAYER")
+                                .requestMatchers("/categories/**", "/game-result", "/my-account/**", "/scoreboard","/api/**").permitAll()
 
                 ).formLogin(
                         form -> form

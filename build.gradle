@@ -42,16 +42,22 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 
 	runtimeOnly 'org.postgresql:postgresql'
-
+	testImplementation 'org.springframework.security:spring-security-test'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.slf4j:slf4j-api:2.0.5'
 	testImplementation 'com.github.tomakehurst:wiremock-standalone:2.27.2'
 	testImplementation 'io.projectreactor:reactor-test'
 	testCompileOnly 'org.projectlombok:lombok'
+	testImplementation 'org.testcontainers:postgresql'
 	testAnnotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'io.rest-assured:rest-assured:5.3.2'
 
 }
-
+dependencyManagement {
+	imports {
+		mavenBom 'org.testcontainers:testcontainers-bom:1.17.6'
+	}
+}
 
 tasks.named('test') {
 	useJUnitPlatform()

@@ -12,7 +12,7 @@ spring:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/quizer_database
     username: postgres
-    password: 1234
+    password: postgres
     hikari:
       idle-timeout: 10000
       connectionTimeout: 20000
@@ -24,6 +24,12 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
+  flyway:
+    url: jdbc:postgresql://localhost:5432/quizer_database
+    user: postgres
+    password: postgres
+    locations: classpath:db/migration
+    baselineOnMigrate: true
   mvc:
     hiddenmethod:
       filter:
