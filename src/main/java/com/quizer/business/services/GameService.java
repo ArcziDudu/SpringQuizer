@@ -18,18 +18,23 @@ public class GameService {
     private final GameDao gameDao;
     private final GameMapper gameMapper;
 
-    public Map<String, Integer> getPlayerStatsSorted(List<GameDto> allGames) {
-        Map<String, Integer> playerPointsMap = new HashMap<>();
+    public Map<String, Map<Integer, Integer>> getPlayerStatsSorted(List<GameDto> allGames) {
+        Map<String,  Map<Integer, Integer>> playerPointsMap = new HashMap<>();
 
         for (GameDto game : allGames) {
             String playerName = game.getPlayer().getUserName();
             int points = game.getPoints();
-            playerPointsMap.put(playerName, playerPointsMap.getOrDefault(playerName, 0) + points);
+            int amountOfGames = allGames.size();
+            playerPointsMap.putIfAbsent(playerName, new HashMap<>());
+
+            Map<Integer, Integer> pointsMap = playerPointsMap.get(playerName);
+
+            pointsMap.put(points, amountOfGames);
         }
 
-        TreeMap<String, Integer> sortedPlayerPointsMap = new TreeMap<>((player1, player2) -> {
-            int points1 = playerPointsMap.get(player1);
-            int points2 = playerPointsMap.get(player2);
+        TreeMap<String, Map<Integer, Integer>> sortedPlayerPointsMap = new TreeMap<>((player1, player2) -> {
+            int points1 = playerPointsMap.get(player1).values().stream().mapToInt(Integer::intValue).sum();
+            int points2 = playerPointsMap.get(player2).values().stream().mapToInt(Integer::intValue).sum();
             return Integer.compare(points2, points1);
         });
 

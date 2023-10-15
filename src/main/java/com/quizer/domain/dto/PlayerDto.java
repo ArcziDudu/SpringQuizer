@@ -1,10 +1,7 @@
 package com.quizer.domain.dto;
 
 import com.quizer.infrastructure.entity.GameEntity;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.Set;
 @Data
@@ -16,4 +13,6 @@ public class PlayerDto {
     private String userName;
     private String userEmail;
     private Set<GameDto> games;
+    private Integer amountOfPlayedGames;
+    private Integer totalPoints;
 }

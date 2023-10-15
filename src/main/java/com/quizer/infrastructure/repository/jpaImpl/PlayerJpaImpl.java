@@ -8,6 +8,7 @@ import com.quizer.infrastructure.repository.mapper.PlayerMapper;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -28,6 +29,11 @@ public class PlayerJpaImpl implements PlayerDao {
     @Override
     public Optional<PlayerDto> findDtoByUserName(String userName) {
         return playerJpaRepository.findByUserName(userName).map(playerMapper::mapFromEntity);
+    }
+
+    @Override
+    public List<PlayerDto> findAllPlayers() {
+        return playerJpaRepository.findAll().stream().map(playerMapper::mapFromEntity).toList();
     }
 
 

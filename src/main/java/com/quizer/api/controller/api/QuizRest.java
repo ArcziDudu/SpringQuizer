@@ -16,10 +16,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 @RestController
@@ -45,11 +45,26 @@ public class QuizRest {
         return ResponseEntity.ok(results);
     }
     @GetMapping(value = API_CATEGORY_SCOREBOARD)
-    public ResponseEntity<Map<String, Integer> > fetchScoreboard(){
-        List<GameDto> allGames = gameService.fetchAllGames();
-        Map<String, Integer> playerPointsMap = gameService.getPlayerStatsSorted(allGames);
-        return ResponseEntity.ok(playerPointsMap);
+    public ResponseEntity<List<PlayerDto>> fetchScoreboard(){
+        List<PlayerDto> allPlayers = playerService.findAllPlayers();
+        List<PlayerDto> scoreboard = new ArrayList<>();
+        for (PlayerDto player : allPlayers) {
+            int totalPoints = 0;
+            for (GameDto game : player.getGames()) {
+                totalPoints += game.getPoints();
+            }
+            player.setTotalPoints(totalPoints);
+            scoreboard.add(PlayerDto.builder()
+                            .userName(player.getUserName())
+                            .userEmail(player.getUserEmail())
+                            .amountOfPlayedGames(player.getGames().size())
+                            .totalPoints(player.getTotalPoints())
+                    .build());
+        }
+        scoreboard.sort((p1, p2) -> p2.getTotalPoints() - p1.getTotalPoints());
+        return ResponseEntity.ok(scoreboard);
     }
+
     @GetMapping(value = API_CATEGORY_GAME_INFO)
     public ResponseEntity<PlayerDto> fetchPlayerInfoByUserName(@PathVariable String userName){
         PlayerDto dtoByUserName = playerService.findDtoByUserName(userName);

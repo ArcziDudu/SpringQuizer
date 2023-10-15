@@ -58,7 +58,12 @@ dependencyManagement {
 		mavenBom 'org.testcontainers:testcontainers-bom:1.17.6'
 	}
 }
-
+bootJar {
+	archiveFileName = "SpringQuizer.${archiveExtension.get()}"
+}
+jar {
+	enabled = false
+}
 tasks.named('test') {
 	useJUnitPlatform()
 }
