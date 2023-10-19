@@ -21,6 +21,7 @@ public class PersistenceContainerTestConfiguration {
         PostgreSQLContainer<?> postgresqlContainer = new PostgreSQLContainer<>(POSTGRESQL_CONTAINER)
                 .withUsername(USERNAME)
                 .withPassword(PASSWORD);
+        postgresqlContainer.withExposedPorts(5432);
         postgresqlContainer.start();
         return postgresqlContainer;
     }

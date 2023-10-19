@@ -31,7 +31,6 @@ public class QuizRest {
     public static final String API_CATEGORY_SCOREBOARD = "/scoreboard";
     public static final String API_CATEGORY_GAME_INFO = "/game-info/{userName}";
     private final QuestionsService questionsService;
-    private final GameService gameService;
     private final PlayerService playerService;
 
     @GetMapping(value = API_CATEGORY_LEVEL)

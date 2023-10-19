@@ -15,16 +15,13 @@ import java.util.Optional;
 
 @Service
 @AllArgsConstructor
+@Transactional
 public class PlayerService {
     private PlayerDao playerDao;
 
-
-    @Transactional
     public void createNewPlayer(PlayerEntity newPlayer) {
         playerDao.savePlayer(newPlayer);
     }
-
-
 
     public PlayerEntity findEntityByUserName(String userName) {
         Optional<PlayerEntity> entityByUserName = playerDao.findByUserName(userName);

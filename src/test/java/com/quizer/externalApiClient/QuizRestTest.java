@@ -1,4 +1,4 @@
-package com.quizer.api.controller.api;
+package com.quizer.externalApiClient;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;

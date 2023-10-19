@@ -27,3 +27,6 @@ CREATE TABLE quizer_user_role
             REFERENCES quizer_role (role_id)
 );
 
+insert into quizer_role (role_id, role) values (1, 'PLAYER');
+
+

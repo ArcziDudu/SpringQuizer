@@ -42,14 +42,15 @@ public class SecurityConfiguration {
         http.csrf().disable()
                 .authorizeHttpRequests((authorize) ->
                         authorize
-                                .requestMatchers("/login", "/register/**").permitAll()
-                                .requestMatchers("/categories/**", "/game-result", "/my-account/**", "/scoreboard","/api/**").permitAll()
+                                .requestMatchers("/login", "/register/**","/api/**").permitAll()
+                                .requestMatchers("/categories/**", "/game-result", "/my-account/**", "/scoreboard")
+                                .hasAnyAuthority("PLAYER")
 
                 ).formLogin(
                         form -> form
                                 .loginPage("/login")
                                 .loginProcessingUrl("/login")
-                                .defaultSuccessUrl("/categories")
+                                .successHandler(new CustomAuthenticationSuccessHandler())
                                 .permitAll()
                 ).logout(
                         logout -> logout
