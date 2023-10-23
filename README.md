@@ -44,7 +44,6 @@ make sure you have docker installed on your environment
 -application is available at localhost:8190/quizer
 <br>
 <br>
-The application has been deployed on AWS and is available at <a href="http://3.67.98.254:8190/quizer">http://3.67.98.254:8190/quizer</a>
 <br>
 <br>
 Technologies used in the production process:
