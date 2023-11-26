@@ -29,23 +29,65 @@ curl http://3.67.98.254:8190/quizer/api/random/hard
 curl http://3.67.98.254:8190/quizer/api/game-info/Arczi
 <br>
 <br>
-Method of activation:
+# Activation Method
+
+Ensure that you have Docker installed on your environment.
+
+1. **Clone the Git repository:**
+    ```bash
+    git clone https://github.com/your-username/your-repo.git
+    ```
+
+2. **Build the JAR file (Linux command):**
+    ```bash
+    ./gradlew build
+    ```
+
+3. **Build the Docker image:**
+    ```bash
+    docker build -t spring-quizer .
+    ```
+
+4. **Launch the container:**
+    ```bash
+    docker-compose up -d
+    ```
+
+5. **Access the application:**
+   The application will be available at [http://localhost:8190/quizer](http://localhost:8190/quizer).
+
+Follow these steps to activate the Spring Quizer application. If you encounter any issues, ensure that Docker is properly installed on your system.
+
 <br>
-make sure you have docker installed on your environment
-<br>
-- clone git repository
-<br>
--build the jar file with koemnd ./gradlew build (on Linux)
-<br>
--docker build -t spring-quizer .
-<br>
-- launch the container with the docker compose up -d command
-<br>
--application is available at localhost:8190/quizer
-<br>
-<br>
-<br>
-<br>
-Technologies used in the production process:
-<br>
-Java, Spring Boot, Spring Security, Postgresql, Thymeleaf, Lombok,Flyway, Api opentdb.com, Wiremock, Rest Assured, Mockito, Docker, AWS,
+# Technologies Used
+
+The following technologies were utilized in the production process of this project:
+
+- **Java**: Primary programming language for application development.
+  
+- **Spring Boot**: Framework for building Java-based applications.
+
+- **Spring Security**: Framework for securing Java applications.
+
+- **PostgreSQL**: Relational database management system.
+
+- **Thymeleaf**: Server-side Java template engine for web applications.
+
+- **Lombok**: Library to reduce boilerplate code in Java.
+
+- **Flyway**: Database migration tool for Java.
+
+- **API opentdb.com**: External API for trivia questions.
+
+- **Wiremock**: Mocking tool for HTTP-based services.
+
+- **Rest Assured**: Testing framework for REST APIs.
+
+- **Mockito**: Mocking framework for unit tests.
+
+- **Docker**: Containerization platform for packaging applications.
+
+- **AWS (Amazon Web Services)**: Cloud computing services for hosting and deployment.
+
+Feel free to explore the individual components of the project to understand how these technologies are integrated.
+
